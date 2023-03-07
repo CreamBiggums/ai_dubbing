@@ -1,0 +1,4 @@
+﻿uploaded audio file
+requested transcription
+polling
+The program 'python.exe' has exited with code 0 (0x0).
