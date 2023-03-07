@@ -5,7 +5,7 @@ import sys
 import openai
 from gtts import gTTS
 
-openai_api_key = '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'
+openai_api_key = ''
 
 def main():
     # Create header with authorization along with content-type
