@@ -14,8 +14,11 @@ def main():
         'content-type': 'application/json'
     }
 
+    audioClip = input("Enter the name of audio file you wish to dub")
 
-    upload_url = utils.upload_file("basketball_clip.mp3", header)
+    audioClipFilePath = "audio_clips/" + audioClip
+
+    upload_url = utils.upload_file(audioClipFilePath, header)
 
     print ("uploaded audio file")
     # Request a transcription
@@ -63,11 +66,11 @@ def main():
 
     translated_transcript = response["choices"][0]["text"]
 
-    tts = gTTS(translated_transcript, lang='es', tld='com.mx')
-    tts.save('spanish_mexico_translation_mavs_basketball.mp3')
+    audioTranslationFilePath = "audio_translations/" + audioClip + "es_com-mx.mp3"
 
-    tts = gTTS(translated_transcript, lang='es', tld='es')
-    tts.save('spanish_spain_translation_mavs_basketball.mp3')
+    tts = gTTS(translated_transcript, lang='es', tld='com.mx')
+    tts.save(audioTranslationFilePath)
+
     return
 
 
